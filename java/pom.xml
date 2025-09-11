@@ -5,17 +5,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cobolsamples</groupId>
-    <artifactId>attract</artifactId>
+    <artifactId>ATTRACT</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!-- Add any necessary dependencies here. For COBOL-like operations,
+             you might need libraries for fixed-point arithmetic,
+             EBCDIC to ASCII conversion, or specialized data structures.
+             This is a placeholder and should be updated based on the actual migration needs. -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -26,15 +42,8 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <mainClass>Attract</mainClass>
-                </configuration>
-            </plugin>
+            <!-- You might want to add plugins for creating runnable JARs or
+                 for other build-time tasks relevant to your migrated application. -->
         </plugins>
     </build>
-
 </project>
